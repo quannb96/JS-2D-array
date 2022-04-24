@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Ex2:</h1>
+    <p>n: <input type="text" id="nRows" /></p>
+    <p>m: <input type="text" id="mCols" /></p>
+    <button type="button" id="btn2DArr">Show</button>
+    <p id="show2DArr"></p>
+
+    <script>
+      const $ = function (id) {
+        return document.getElementById(id);
+      };
+      $("btn2DArr").addEventListener("click", () => {
+        let n = $("nRows").value;
+        let m = $("mCols").value;
+        let show2DArr = $("show2DArr");
+        show2DArr.innerHTML = "";
+        const myArray = [];
+        for (let i = 0; i < n; i++) {
+          myArray[i] = [];
+
+          for (let j = 0; j < m; j++) {
+            myArray[i][j] = 0;
+            show2DArr.innerHTML += myArray[i][j] + " ";
+          }
+          show2DArr.innerHTML += "<br>";
+        }
+      });
+    </script>
+  </body>
+</html>
